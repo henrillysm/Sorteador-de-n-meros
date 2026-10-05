@@ -21,94 +21,109 @@
         </a>
     </header>
 
-    <main class="page-content">
+    <main class="page-content container">
         <section class="intro" aria-labelledby="page-title">
             <div class="header-intro">
                 <p class="online-title">ONLINE - GRATUITO</p>
                 <h1 id="page-title">SORTEADOR DE NÚMEROS</h1>
             </div>
-            <div class="questions">
-                <div class="items">
-                    <img src="./styles/icon/message.png" alt="ícone de messagem">
-                    <div class="text">
-                        <p>Como funciona o sorteador de números?</p>
-                        <p>O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
-                    </div>
-                </div>
-                <div class="items">
-                    <img src="./styles/icon/message.png" alt="ícone de messagem">
-                    <div class="text">
-                        <p>Posso escolher o intervalo dos números?</p>
-                        <p>Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.</p>
-                    </div>
-                </div>
-            </div>
         </section>
-
+        
         <section class="content-form"aria-labelledby="">
-                
+            
             <form id="sort-form" class="sort-form">
                 <div class="title-form">
                     <h2>QUERO SORTEAR:</h2>
-                    <p>defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
+                    <p>Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
                 </div>
-
+                
                 <div class="form">
                     <div class="fields">
                         <div class="number-field">
                             <label class="label-field" for="quantity">
-                                NÚMERO
+                                NÚMEROS
                             </label>
                             <input id="quantity" name="quantity" type="text" inputmode="numeric" required aria-describedby="quantity-error">
+                            <span class="input-caret" aria-hidden="true"></span>
                         </div>
                         <div class="number-field">
                             <label class="label-field" for="minimum">DE
                             </label>
                             <input id="minimum" name="minimum" type="text" inputmode="numeric" required aria-describedby="minimum-error">
+                            <span class="input-caret" aria-hidden="true"></span>
                         </div>
                         <div class="number-field">
                             <label class="label-field" for="maximum">DE
                             </label>
                             <input id="maximum" name="maximum" type="text" inputmode="numeric" required aria-describedby="maximum-error">
+                            <span class="input-caret" aria-hidden="true"></span>
                         </div>
-    
+                        
                     </div>
                     <div class="option-toggle">
                         <label class="toggle" for="no-repeat">
-                            <input id="no-repeat" name="no-repeat" type="checkbox">
+                            <input id="no-repeat" name="no-repeat" type="checkbox" checked>
                             <span>Não repetir número</span>
                         </label>
-                    </div>
-                    
+                    </div>                    
                 </div>
                 <button type="submit" id="draw-button" class="button">
                     <span>SORTEAR</span>
-                    <img class="button-icon" src="./styles/icon/play.png" alt="" aria-hidden="true">
+                    <img class="button-icon-play" src="./styles/icon/play.png" alt="" aria-hidden="true">
                 </button>
                 
-                <!-- <p id="form-error" class="form-error" role="alert"></p> -->
+                <div>
+                    <p id="form-error" class="form-error form-message" role="alert"></p>  
+                </div>
                 
             </form>
             
         </section>
-
+        
         <section id="result" class="result" hidden>
             <div class="sort-result">
                 <h2>RESULTADO DO SORTEIO</h2>
                 <p id="result-title">1º RESULTADO</p>
             </div>
 
-            <div id="numbers"></div>
+            <div id="content-number" class="content-number">
+            </div>
+
+
             <template id="number-template">
-                <div class="number-box">
-                    <span class="number-value"></span>
+                <div class="animation-number">
+                    <div class="box-number"></div>
+                    <span class="value-number"></span>
                 </div>
             </template>
-            <button type="button" id="draw-again" class="button">
-            <span>SORTEAR NOVAMENTE</span>
-            <img class="button-icon" src="./styles/icon/reload.png" alt="" aria-hidden="true">
-            </button>
+            <div class="btnOrganize">
+                <button type="button" id="draw-again" class="button">
+                <span>SORTEAR NOVAMENTE</span>
+                <img class="button-icon-again" src="./styles/icon/reload.png" alt="" aria-hidden="true">
+                </button>
+
+                <button type="button" id="reset-draw" class="button-secondary"><span>Resetar</span></button>
+            </div>
+            <p id="form-acert" class="form-acert form-message" role="acert"></p>
         </section>
+
+        <section class="questions">
+            <div class="items">
+                <img src="./styles/icon/message.png" alt="ícone de messagem">
+                <div class="text">
+                    <p>Como funciona o sorteador de números?</p>
+                    <p>O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
+                </div>
+            </div>
+            <div class="items">
+                <img src="./styles/icon/message.png" alt="ícone de messagem">
+                <div class="text">
+                    <p>Posso escolher o intervalo dos números?</p>
+                    <p>Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.</p>
+                </div>
+            </div>
+        </section>
+        
     </main>
 
 

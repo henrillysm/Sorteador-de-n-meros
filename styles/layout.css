@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    gap: 2.875rem;
+    width: 24.375rem;
+    /* height: 59.812rem; */
+    height: 100vh;
+    flex-direction: column;
+    margin: auto;
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.625rem;
+    width: 24.375rem;
+    /* height: 49.062rem; */
+    height: 100vh;
+    margin-inline: auto;
+
+}
+
+.container {
+    --max-width: 390px;
+    width: min(var(--max-width), 100% - var(--px-xl) * 2);
+}
+
+
+@media (width >= 85.375em) {
+   body {
+       width: 85.375rem;
+       /* height: 78rem; */
+       height: 100vh;
+       gap: 5.56rem;
+    }
+
+    .page-content {
+        display: grid;
+        grid-template-columns: fit-content fit-content;
+        grid-template-areas: 
+        "intro form"
+        "questions form";
+        /* flex-direction: row; */
+        width: 68.625rem;
+        height: 25.75rem;
+        gap: 2.37rem 6.75rem;
+        align-items: center;
+    }
+
+    .intro {
+        grid-area: intro;
+        /* width: 100%; */
+        /* Garante que a altura se ajuste ao conteúdo - o valor anteriro estava levando em consideração apenas o layout para desktop*/
+        height: auto; 
+    }
+
+    .questions {
+        grid-area: questions;
+        /* width: 100%; */
+        /* height: auto; */
+    }
+
+    .content-form {
+        grid-area: form;
+        /* width: 100%; */
+        /* height: auto; */
+    }
+
+    .result {
+        grid-area: form;
+        /* width: 100%; */
+    }
+
+    .container {
+        --max-width: 68.625rem;
+        width: var(--max-width);
+    }
+
+}

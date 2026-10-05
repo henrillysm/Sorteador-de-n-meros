@@ -1,0 +1,29 @@
+img .logo {
+    width: 38px;
+    height: 38px;
+}
+
+.items img {
+    width: 20px;
+    height: 20px;   
+}
+
+.text { 
+
+    & p:nth-child(1) {
+        font: var(--paragraph-medium);
+        color: var(--content-brand);
+    }
+
+    & p:nth-child(2) {
+        font: var(--paragraph-small);
+        color: var(--content-secondary);
+    }
+
+}
+
+[hidden] {
+    display: none !important;
+}
+
+

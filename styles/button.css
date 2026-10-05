@@ -1,0 +1,223 @@
+.btnOrganize {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+
+}
+
+.fadeInBtn {
+    animation: fadeInBtn 0.6s ease-in-out forwards;
+}
+
+.button {
+    appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 8px;
+    /* width: 100%; */
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    height: 3.5rem;
+    border-radius: 8px;
+    background-color: var(--bg-tertiary);
+    cursor: pointer;
+    border: 2px solid transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    --gradient-border: linear-gradient(
+      var(--angle),
+      #77C0AF 0%,
+      #D1DC97 14.84%,
+      #E9A9B3 32.15%,
+      #D586E0 65.79%,
+      #91A1FA 84.58%
+    );
+    
+    & span {
+        font: var(--label-medium);
+        /* height: 1.5rem; */
+        color: var(--content-primary);
+    }
+    
+    & img {
+        width: 24px;
+        height: 24px;
+    }
+
+}
+
+#draw-button {
+    flex: none;
+}
+    
+#draw-again span {
+    color: var(--content-tertiary);
+}
+
+.button-secondary {
+    appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-shrink: 0; */
+    width: fit-content;
+    height: 3.5rem;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    background-color: var(--bg-tertiary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+
+    & span {
+        font: var(--label-small);
+        color: var(--content-secondary);
+    }
+}
+
+.button.animation,
+.button.animation:focus-visible {
+    background-image: 
+        linear-gradient(var(--bg-secondary),var(--bg-secondary)),
+        var(--gradient-border);
+    animation: button-animation 1.95s linear;
+}
+
+
+.button.animation .button-icon-play,
+.button.animation:focus-visible .button-icon-play {
+    animation: slide-right-and-back 1.95s linear;
+
+}
+
+.button.animation .button-icon-again,
+.button.animation:focus-visible .button-icon-again {
+    animation: spin-icon 1.95s linear;
+}
+
+
+.btnOrganize.is-hidden {
+    visibility: hidden;
+}
+
+.form-acert.is-hidden {
+    visibility: hidden;
+}
+
+
+
+@keyframes fadeInBtn {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes button-animation {
+    0% {
+        /* background-image: none; */
+        --angle: 87deg;
+    }
+
+
+    7.69% {
+        --angle: 87deg;
+        background-image: 
+        linear-gradient(var(--bg-secondary), var(--bg-secondary)),
+        var(--gradient-border);
+
+    }
+
+    23.08% {
+        --angle: 87deg;
+        
+    }
+
+    38.46% {
+        --angle: 3deg;
+        
+    }
+
+    53.85% {
+        --angle: 87deg;
+        
+    }
+
+    69.23% {
+        --angle: 87deg;
+
+    }
+
+    99.99% {
+        --angle: -87deg;
+        background-image: 
+        linear-gradient(var(--bg-secondary), var(--bg-secondary)),
+        var(--gradient-border);
+    }
+
+    100% {
+        --angle: 90deg;
+        background-image: none;
+    }
+
+}
+
+@keyframes slide-right-and-back {
+    0%, 7.69% {
+        transform: translateX(0);
+    }
+
+    23.07% {
+        transform: translateX(4px);
+    }
+
+    38.46% {
+        transform: translateX(6.5px);
+    }
+   
+    53.85% {
+        transform: translateX(9px)
+    }
+    
+    69.23% {
+        transform: translateX(4px);
+    }
+    
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes spin-icon {
+    0%, 7.69% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media (width >= 85.375em) {
+
+    /* .button {
+        width: 30.125rem;
+    } */
+
+    #draw-button {
+        flex: none;
+    }
+}
+

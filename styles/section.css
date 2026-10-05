@@ -1,0 +1,531 @@
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    width: 19.937rem;
+    height: 8.5rem;
+
+    & .header-intro {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width:100%;
+        height: auto;
+    }
+
+}
+
+.online-title {
+    font: var(--overline);
+    background-image: var(--gradient-content);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#page-title {
+    font: var(--display-medium);
+    color: var(--content-primary);
+    /* letter-spacing: -0.04em; */
+}
+
+
+.content-form {
+    display: flex;
+    width: 19.937rem;
+    height: 22.437rem;
+
+    & .sort-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        width: 100%;
+        /* height: 100%; */
+    }
+
+}
+
+.title-form {
+    & h2 {
+        font: var(--label-large);
+        color: var(--content-primary);
+    }
+    & p {
+        font: var(--paragraph-medium);
+        color: var(--content-tertiary);
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.fields {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    
+    & .number-field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+        width: 5.375rem;
+        height: 5.5rem;
+
+        & input {
+            appearance: none;
+            width: 100%;
+            height: 3.5rem;
+            padding: 4px 8px;
+            border-radius: 8px;
+            background-color: var(--bg-secondary);
+            font: var(--display-small);
+            color: var(--content-primary);
+            text-align: center;
+            caret-color: transparent;
+            
+            border: 1px solid transparent;
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+
+            transition: transform 0.2s ease;
+
+            &:focus,
+            &:focus-visible {
+                outline: none;
+                outline-offset: 0;
+
+                border-width: 2px;
+                transform: translateY(.5px);
+                background-image: 
+                    linear-gradient(var(--bg-tertiary), var(--bg-tertiary)),
+                    var(--gradient-border);
+            }
+            
+        }
+
+        & .input-caret {
+            position: absolute;
+            top: 3.75rem;
+            left: 50%;
+            width: 2px;
+            height: 29px;
+            background-color: var(--content-primary);
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+
+        &:has(input:focus) .input-caret {
+            animation: input-caret-blink 1.4s linear infinite;
+        }
+        
+    }
+}
+
+        
+.label-field {
+    font: var(--label-medium);
+    color: var(--content-secondary);
+    transition: color 0.2s ease;
+}
+
+.number-field:hover {
+    & .label-field {
+        color: var(--content-brand);
+    }
+
+    & input {
+        transform: translateY(.5px);
+        background-image: 
+            linear-gradient(var(--bg-tertiary), var(--bg-tertiary)),
+            var(--gradient-border);
+    }
+}
+
+.number-field:has(input:focus) .label-field {
+    color: var(--content-brand);
+}
+
+
+.form-message {
+    min-height: 1.5rem;
+    /* width: fit-content; */
+    max-width: 100%;
+    padding: 0.5rem 0.75rem;
+    font: var(--paragraph-small);
+    line-height: 1.4;
+}
+
+.form-error:empty {
+    display: none;
+}
+.form-error {
+    color: var(--color-danger);
+}
+.form-acert:empty {
+    display: none;
+}
+.form-acert {
+    color: var(--accent-green);
+}
+
+
+.option-toggle {
+    display: flex;
+    width: 9.25rem;
+    height: 1.25rem;
+    
+
+    & .toggle {
+        display: flex;
+        position: relative;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+
+        & [type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        &::before {
+            content: "";
+            width: 1.875rem;  /* 30px */
+            height: 1.25rem;  /* 20px */
+            flex-shrink: 0;   
+            background: url("./icon/default.png") no-repeat center/contain;
+
+            transition: background 0.4s ease-in-out;
+        }
+
+        &:has([type="checkbox"]:checked)::before {
+            background-image: url("./icon/active.png");
+        }
+        
+        /* Troca para a imagem ativa ao marcar o checkbox */
+        &:has([type="checkbox"]:focus-visible)::before {
+            outline: 2px solid var(--accent-pink, #2563eb);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        & span {
+            font: var(--inter);
+            color: var(--content-primary);
+        }
+    }
+
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    width: 19.937rem;
+    height: 10.5rem;
+    margin-top: 2.375rem;
+
+}
+
+.items {
+    display: flex;
+    gap: 8px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    /* width: 30.125rem;
+    height: 18.375rem; */
+    width: 100%;
+    height: auto;
+    margin-top: 1.75rem;
+    margin-bottom: -10px;
+
+}
+
+.sort-result {
+    display: inherit;
+    flex-direction: inherit;
+    gap: 4px;
+    width: 100%;
+    /* height: 3.625rem; */
+    height: auto;
+    align-items: center;
+    
+    & h2 {
+        font: var(--label-large);
+        color: var(--content-primary);
+    }
+
+    & p {
+        font: var(--overline);
+        color: var(--content-secondary);
+    }
+}
+
+.content-number {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    
+    min-height: 6.25rem;
+    align-items: center;
+}
+
+.animation-number {
+    display: flex;
+    position: relative;
+    width:5.25rem;
+    height:6.25rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-number {
+    position: absolute;
+    width:5.25rem;
+    height: 5.25rem;
+    border-radius: 1.75rem;
+
+    animation: animarCaixa 2.7s ease-in-out forwards;
+
+}
+
+
+.value-number{
+    position: relative;
+    font: 700 3rem/150% var(--ff-robo-mono);
+    color: var(--content-brand);
+    z-index: 2;
+    animation: animarTexto 2.7s ease-in-out both;
+}
+
+
+
+
+@media (width >= 85.375em) {
+
+    .intro {
+        width: 31.75rem;
+        /* height: 25.75rem; */
+
+    & .header-intro {
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+        width:inherit;
+        height: 14rem;
+        /* width: 100%; */
+    }
+
+    }
+
+
+    #page-title {
+        color: var(--content-primary);
+        letter-spacing: -0.04em;
+        font: var(--display-large);
+    }
+
+
+    .content-form {
+        height: 21.5rem;
+        width: 30.125rem;
+        
+    }
+
+    .title-form {
+        & h2 {
+            color: var(--content-primary);
+            font: var(--label-large);
+        }
+        & p {
+            color: var(--content-secondary);
+            font: var(--paragraph-large);
+        }
+    }
+
+    .questions {
+        /*Alguns valores dependem do grid utilizados em layout.css*/
+
+        width: 24.125rem;
+        height: 9.375rem;
+        margin-top: 0;
+
+    }
+
+    .result {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+}
+
+
+
+@keyframes animarCaixa {
+  0% {
+    opacity: 0;
+    width: 12px;
+    height: 12px;
+    transform: rotate(0deg);
+    background-color: var(--color-inverse);
+  }
+
+  /* [800ms - 29.6%] 1º Passo (70ms): Cresce para 100px x 100px em 0deg */
+  29.63% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(0deg);
+    background-color: var(--content-brand);
+  }
+
+  32.22% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(18deg);
+    background-color: var(--content-brand);
+  }
+
+  34.81% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(36deg);
+    background-color: var(--content-brand);
+  }
+
+  37.41% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(54deg);
+    background-color: var(--content-brand);
+  }
+  /* Etapa 5 (72deg) */
+  40.00% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(72deg);
+    background-color: var(--content-brand);
+  }
+
+  /* Etapa 6 (90deg) */
+  42.59% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(90deg);
+    background-color: var(--content-brand);
+  }
+
+  /* Etapa 7 (108deg) */
+  45.19% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(108deg);
+    background-color: var(--content-brand);
+  }
+
+  /* Etapa 8 (126deg) */
+  47.78% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(126deg);
+    background-color: var(--content-brand);
+  }
+
+  /* Etapa 9 (144deg) */
+  50.37% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(144deg);
+    background-color: var(--content-brand);
+  }
+
+  /* Etapa 10 (162deg) */
+  52.96% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(162deg);
+    background-color: var(--content-brand);
+  }
+
+  55.56% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    transform: rotate(180deg);
+    background-color: var(--content-brand);
+  }
+
+
+  /* Saída: Volta para o tamanho do CSS (5.25rem), fica escura novamente e zera a rotação */
+  100% {
+    width: 5.25rem;
+    height: 5.25rem;
+    transform: rotate(180deg);
+  }
+}
+
+
+@keyframes animarTexto {
+  /* 0ms até 1079ms: Invisível */
+  0%, 39.9% {
+    opacity: 0;
+    font-size: 64px;
+    color: var(--color-inverse);
+  }
+
+  /* De 1080ms (40%) até 1500ms (55.55%):
+     Aparece instantaneamente e MANTÉM 64px durante as 6 etapas */
+  40%, 55.56% {
+    opacity: 1;
+    font-size: 64px;
+    color: var(--color-inverse);
+  }
+
+  /* 2700ms (100%): Transição suave do 55.55% até aqui */
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes input-caret-blink {
+    0% {
+        opacity: 1;
+    }
+    
+    21.43% {
+        opacity: 0;
+    }
+
+    72.72% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}

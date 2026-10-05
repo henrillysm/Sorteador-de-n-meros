@@ -1,0 +1,99 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        width: 100%;
+        min-height: 100vh;
+        padding: 0 2rem 3rem;
+        gap: 2.5rem;
+    }
+
+    .site-header {
+        width: 100%;
+        height: auto;
+        margin: 3.5rem 0 0;
+        padding-left: 1rem;
+    }
+
+    .brand {
+        width: fit-content;
+    }
+
+    main.page-content {
+        width: min(100%, 45rem);
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        align-items: center;
+    }
+
+    .intro {
+        width: min(100%, 40rem);
+        height: auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    .intro .header-intro {
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    .intro .questions {
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    .questions .items {
+        justify-content: center;
+    }
+
+    #page-title {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    .content-form,
+    .content-form .sort-form,
+    #result {
+        width: min(100%, 30rem);
+    }
+
+    .sort-form {
+        align-items: center;
+    }
+
+    .title-form {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .fields {
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .number-field {
+        flex: 1 1 5.375rem;
+        max-width: 5.375rem;
+    }
+
+    .option-toggle {
+        width: auto;
+    }
+
+    #result {
+        align-items: center;
+    }
+
+    #numbers {
+        justify-content: center;
+    }
+}
+
+

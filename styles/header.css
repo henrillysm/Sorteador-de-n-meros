@@ -1,0 +1,31 @@
+.site-header {
+    width: 10.75rem;
+    height: 38px;
+    margin-top: 2.75rem;
+    margin-inline: auto;
+}
+
+.brand {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+.number-title {
+    font: 800 1.5rem/130% var(--ff-sora);
+    letter-spacing: -0.04em;
+    color: var(--content-primary);
+}
+
+
+@media (width >= 85.375em) {
+
+    .site-header {
+        margin-top: 4.75rem;
+        margin-left: 7.5rem;
+    }
+    
+}
