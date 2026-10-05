@@ -31,4 +31,4 @@ Também é possível executar o projeto com a extensão Live Server do VS Code.
 
 ## Origem
 
-Desafio proposto pela Rocketseat e personalizado por [seu nome].
+Desafio proposto pela Rocketseat e personalizado por [Henrilly de Sousa Maciel].
