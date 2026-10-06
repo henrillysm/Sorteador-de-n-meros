@@ -162,6 +162,7 @@
     line-height: 1.4;
 }
 
+
 .form-error:empty {
     display: none;
 }
@@ -175,6 +176,10 @@
     color: var(--accent-green);
 }
 
+.alertError {
+    /* display: none; */
+    margin-top: -1.5rem;
+}
 
 .option-toggle {
     display: flex;
@@ -331,7 +336,6 @@
     }
 
     }
-
 
     #page-title {
         color: var(--content-primary);
