@@ -42,6 +42,11 @@ function executeDraw() {
     const max = Number(form.maximum.value);
     
     try {
+
+        if (!Number.isInteger(qtdNumber) || qtdNumber <= 0) {
+            throw new Error("A quantidade deve ser um número inteiro maior que zero.");
+        }   
+        
         let results;
 
         if (noRepeat.checked) {
@@ -51,7 +56,7 @@ function executeDraw() {
             results = draw(qtdNumber, min, max);
         }
 
-        console.log(results);
+        // console.log(results);
 
         resultTitle.textContent = `${drawCount}º RESULTADO`;
         
@@ -146,10 +151,10 @@ function renderNumbers(results) {
     function showNextNumber() {
         // Verifica se já mostramos todos os números
         if (currentIndex >= results.length) {
-             const startHeight = result.getBoundingClientRect().height;
-             btnOrganize.hidden = false;
-             addAcert.hidden = false;
-             
+            const startHeight = result.getBoundingClientRect().height;
+            btnOrganize.hidden = false;
+            addAcert.hidden = false;
+                 
              const endHeight = result.getBoundingClientRect().height;
 
              if (endHeight > startHeight && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -162,9 +167,9 @@ function renderNumbers(results) {
                 );
             }
                 
-                drawAgainBtn.classList.add("fadeInBtn");
-                return;
-
+            drawAgainBtn.classList.add("fadeInBtn");
+            return;
+            
             // btnOrganize.hidden = false;
             // drawAgainBtn.classList.add("fadeInBtn");
             // addAcert.hidden = false;
@@ -263,10 +268,14 @@ try {
 
     document.querySelectorAll(".button").forEach(btn => {
         btn.addEventListener("mouseenter", () => {
+            // btn.classList.add("animation");
+            if (btn.classList.contains("fadeInBtn")) return;
             btn.classList.add("animation");
         });
         
         btn.addEventListener("animationend", (event) => {
+            console.log(event.target);
+
             if (event.target !== btn) return;
 
             if (event.animationName === "fadeInBtn") {
